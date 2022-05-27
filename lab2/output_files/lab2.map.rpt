@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Tue May 17 18:45:15 2022
+Fri May 27 19:54:12 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -42,13 +42,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 17 18:45:15 2022           ;
+; Analysis & Synthesis Status        ; Successful - Fri May 27 19:54:12 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab2                                            ;
 ; Top-level Entity Name              ; lab2                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 19                                              ;
-;     Total combinational functions  ; 19                                              ;
+; Total logic elements               ; 20                                              ;
+;     Total combinational functions  ; 20                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 46                                              ;
@@ -154,13 +154,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                               ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; lab2.v                           ; yes             ; User Verilog HDL File  ; C:/altera/PLIS/lab2/lab2.v   ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                     ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
+; lab2.v                           ; yes             ; User Verilog HDL File  ; C:/Users/79167/Documents/GitHub/lonk/lab2/lab2.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -168,16 +168,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 19     ;
+; Estimated Total logic elements              ; 20     ;
 ;                                             ;        ;
-; Total combinational functions               ; 19     ;
+; Total combinational functions               ; 20     ;
 ; Logic element usage by number of LUT inputs ;        ;
 ;     -- 4 input functions                    ; 4      ;
-;     -- 3 input functions                    ; 11     ;
+;     -- 3 input functions                    ; 12     ;
 ;     -- <=2 input functions                  ; 4      ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 19     ;
+;     -- normal mode                          ; 20     ;
 ;     -- arithmetic mode                      ; 0      ;
 ;                                             ;        ;
 ; Total registers                             ; 0      ;
@@ -188,8 +188,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ; Maximum fan-out node                        ; Code~0 ;
 ; Maximum fan-out                             ; 5      ;
-; Total fan-out                               ; 72     ;
-; Average fan-out                             ; 1.11   ;
+; Total fan-out                               ; 77     ;
+; Average fan-out                             ; 1.17   ;
 +---------------------------------------------+--------+
 
 
@@ -198,7 +198,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |lab2                      ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |lab2               ; work         ;
+; |lab2                      ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |lab2               ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -216,10 +216,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX2[1]$latch                                       ; always2             ; yes                    ;
 ; HEX2[2]$latch                                       ; always2             ; yes                    ;
 ; HEX2[6]$latch                                       ; always2             ; yes                    ;
+; HEX3[0]$latch                                       ; always3             ; yes                    ;
 ; HEX3[1]$latch                                       ; always3             ; yes                    ;
-; HEX3[2]$latch                                       ; always3             ; yes                    ;
 ; HEX3[3]$latch                                       ; always3             ; yes                    ;
-; Number of user-specified and inferred latches = 11  ;                     ;                        ;
+; HEX3[4]$latch                                       ; always3             ; yes                    ;
+; HEX3[6]$latch                                       ; always3             ; yes                    ;
+; Number of user-specified and inferred latches = 13  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -254,49 +256,50 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue May 17 18:45:14 2022
+    Info: Processing started: Fri May 27 19:54:12 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file lab2.v
     Info (12023): Found entity 1: lab2
 Info (12127): Elaborating entity "lab2" for the top level hierarchy
-Warning (10240): Verilog HDL Always Construct warning at lab2.v(18): inferring latch(es) for variable "HEX0", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at lab2.v(28): inferring latch(es) for variable "HEX1", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at lab2.v(38): inferring latch(es) for variable "HEX2", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at lab2.v(48): inferring latch(es) for variable "HEX3", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "HEX3[0]" at lab2.v(48)
-Info (10041): Inferred latch for "HEX3[1]" at lab2.v(48)
-Info (10041): Inferred latch for "HEX3[2]" at lab2.v(48)
-Info (10041): Inferred latch for "HEX3[3]" at lab2.v(48)
-Info (10041): Inferred latch for "HEX3[4]" at lab2.v(48)
-Info (10041): Inferred latch for "HEX3[5]" at lab2.v(48)
-Info (10041): Inferred latch for "HEX3[6]" at lab2.v(48)
-Info (10041): Inferred latch for "HEX2[0]" at lab2.v(38)
-Info (10041): Inferred latch for "HEX2[1]" at lab2.v(38)
-Info (10041): Inferred latch for "HEX2[2]" at lab2.v(38)
-Info (10041): Inferred latch for "HEX2[3]" at lab2.v(38)
-Info (10041): Inferred latch for "HEX2[4]" at lab2.v(38)
-Info (10041): Inferred latch for "HEX2[5]" at lab2.v(38)
-Info (10041): Inferred latch for "HEX2[6]" at lab2.v(38)
-Info (10041): Inferred latch for "HEX1[0]" at lab2.v(28)
-Info (10041): Inferred latch for "HEX1[1]" at lab2.v(28)
-Info (10041): Inferred latch for "HEX1[2]" at lab2.v(28)
-Info (10041): Inferred latch for "HEX1[3]" at lab2.v(28)
-Info (10041): Inferred latch for "HEX1[4]" at lab2.v(28)
-Info (10041): Inferred latch for "HEX1[5]" at lab2.v(28)
-Info (10041): Inferred latch for "HEX1[6]" at lab2.v(28)
-Info (10041): Inferred latch for "HEX0[0]" at lab2.v(18)
-Info (10041): Inferred latch for "HEX0[1]" at lab2.v(18)
-Info (10041): Inferred latch for "HEX0[2]" at lab2.v(18)
-Info (10041): Inferred latch for "HEX0[3]" at lab2.v(18)
-Info (10041): Inferred latch for "HEX0[4]" at lab2.v(18)
-Info (10041): Inferred latch for "HEX0[5]" at lab2.v(18)
-Info (10041): Inferred latch for "HEX0[6]" at lab2.v(18)
+Warning (10240): Verilog HDL Always Construct warning at lab2.v(19): inferring latch(es) for variable "HEX0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at lab2.v(29): inferring latch(es) for variable "HEX1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at lab2.v(39): inferring latch(es) for variable "HEX2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at lab2.v(49): inferring latch(es) for variable "HEX3", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "HEX3[0]" at lab2.v(49)
+Info (10041): Inferred latch for "HEX3[1]" at lab2.v(49)
+Info (10041): Inferred latch for "HEX3[2]" at lab2.v(49)
+Info (10041): Inferred latch for "HEX3[3]" at lab2.v(49)
+Info (10041): Inferred latch for "HEX3[4]" at lab2.v(49)
+Info (10041): Inferred latch for "HEX3[5]" at lab2.v(49)
+Info (10041): Inferred latch for "HEX3[6]" at lab2.v(49)
+Info (10041): Inferred latch for "HEX2[0]" at lab2.v(39)
+Info (10041): Inferred latch for "HEX2[1]" at lab2.v(39)
+Info (10041): Inferred latch for "HEX2[2]" at lab2.v(39)
+Info (10041): Inferred latch for "HEX2[3]" at lab2.v(39)
+Info (10041): Inferred latch for "HEX2[4]" at lab2.v(39)
+Info (10041): Inferred latch for "HEX2[5]" at lab2.v(39)
+Info (10041): Inferred latch for "HEX2[6]" at lab2.v(39)
+Info (10041): Inferred latch for "HEX1[0]" at lab2.v(29)
+Info (10041): Inferred latch for "HEX1[1]" at lab2.v(29)
+Info (10041): Inferred latch for "HEX1[2]" at lab2.v(29)
+Info (10041): Inferred latch for "HEX1[3]" at lab2.v(29)
+Info (10041): Inferred latch for "HEX1[4]" at lab2.v(29)
+Info (10041): Inferred latch for "HEX1[5]" at lab2.v(29)
+Info (10041): Inferred latch for "HEX1[6]" at lab2.v(29)
+Info (10041): Inferred latch for "HEX0[0]" at lab2.v(19)
+Info (10041): Inferred latch for "HEX0[1]" at lab2.v(19)
+Info (10041): Inferred latch for "HEX0[2]" at lab2.v(19)
+Info (10041): Inferred latch for "HEX0[3]" at lab2.v(19)
+Info (10041): Inferred latch for "HEX0[4]" at lab2.v(19)
+Info (10041): Inferred latch for "HEX0[5]" at lab2.v(19)
+Info (10041): Inferred latch for "HEX0[6]" at lab2.v(19)
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "HEX1[3]$latch" merged with LATCH primitive "HEX1[2]$latch"
     Info (13026): Duplicate LATCH primitive "HEX2[2]$latch" merged with LATCH primitive "HEX2[1]$latch"
-    Info (13026): Duplicate LATCH primitive "HEX3[3]$latch" merged with LATCH primitive "HEX3[1]$latch"
-    Info (13026): Duplicate LATCH primitive "HEX3[2]$latch" merged with LATCH primitive "HEX3[1]$latch"
+    Info (13026): Duplicate LATCH primitive "HEX3[4]$latch" merged with LATCH primitive "HEX3[0]$latch"
+    Info (13026): Duplicate LATCH primitive "HEX3[3]$latch" merged with LATCH primitive "HEX3[0]$latch"
+    Info (13026): Duplicate LATCH primitive "HEX3[1]$latch" merged with LATCH primitive "HEX3[0]$latch"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[0]" is stuck at GND
     Warning (13410): Pin "HEX0[1]" is stuck at GND
@@ -311,20 +314,18 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX2[3]" is stuck at GND
     Warning (13410): Pin "HEX2[4]" is stuck at GND
     Warning (13410): Pin "HEX2[5]" is stuck at GND
-    Warning (13410): Pin "HEX3[0]" is stuck at GND
-    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
     Warning (13410): Pin "HEX3[5]" is stuck at GND
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 66 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 19 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4588 megabytes
-    Info: Processing ended: Tue May 17 18:45:15 2022
-    Info: Elapsed time: 00:00:01
+    Info (21061): Implemented 20 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4586 megabytes
+    Info: Processing ended: Fri May 27 19:54:12 2022
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
