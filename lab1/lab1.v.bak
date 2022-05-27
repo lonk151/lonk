@@ -1,0 +1,8 @@
+module lab_1(
+	input a,
+	input b,
+	input x[2:0],
+	output f );
+	assign f = (x[2] & b) | (a ^ x[0]) & (x[1] | (a & ~b));
+
+endmodule 
